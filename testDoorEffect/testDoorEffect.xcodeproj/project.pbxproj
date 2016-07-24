@@ -13,6 +13,9 @@
 		168DACB01D44857100752D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168DACAE1D44857100752D21 /* Main.storyboard */; };
 		168DACB21D44857100752D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 168DACB11D44857100752D21 /* Assets.xcassets */; };
 		168DACB51D44857100752D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168DACB31D44857100752D21 /* LaunchScreen.storyboard */; };
+		168DACBF1D44889400752D21 /* UIView+DoorEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 168DACBE1D44889400752D21 /* UIView+DoorEffect.m */; };
+		168DACC31D44B6ED00752D21 /* testVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 168DACC11D44B6ED00752D21 /* testVC.m */; };
+		168DACC41D44B6ED00752D21 /* testVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 168DACC21D44B6ED00752D21 /* testVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,11 @@
 		168DACB11D44857100752D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		168DACB41D44857100752D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		168DACB61D44857100752D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		168DACBD1D44889400752D21 /* UIView+DoorEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DoorEffect.h"; sourceTree = "<group>"; };
+		168DACBE1D44889400752D21 /* UIView+DoorEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DoorEffect.m"; sourceTree = "<group>"; };
+		168DACC01D44B6ED00752D21 /* testVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testVC.h; sourceTree = "<group>"; };
+		168DACC11D44B6ED00752D21 /* testVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testVC.m; sourceTree = "<group>"; };
+		168DACC21D44B6ED00752D21 /* testVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,9 @@
 				168DACB31D44857100752D21 /* LaunchScreen.storyboard */,
 				168DACB61D44857100752D21 /* Info.plist */,
 				168DACA51D44857100752D21 /* Supporting Files */,
+				168DACC01D44B6ED00752D21 /* testVC.h */,
+				168DACC11D44B6ED00752D21 /* testVC.m */,
+				168DACC21D44B6ED00752D21 /* testVC.xib */,
 			);
 			path = testDoorEffect;
 			sourceTree = "<group>";
@@ -83,6 +94,8 @@
 		168DACBC1D4485B300752D21 /* DoorEffect */ = {
 			isa = PBXGroup;
 			children = (
+				168DACBD1D44889400752D21 /* UIView+DoorEffect.h */,
+				168DACBE1D44889400752D21 /* UIView+DoorEffect.m */,
 			);
 			path = DoorEffect;
 			sourceTree = "<group>";
@@ -144,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168DACC41D44B6ED00752D21 /* testVC.xib in Resources */,
 				168DACB51D44857100752D21 /* LaunchScreen.storyboard in Resources */,
 				168DACB21D44857100752D21 /* Assets.xcassets in Resources */,
 				168DACB01D44857100752D21 /* Main.storyboard in Resources */,
@@ -159,7 +173,9 @@
 			files = (
 				168DACAD1D44857100752D21 /* ViewController.m in Sources */,
 				168DACAA1D44857100752D21 /* AppDelegate.m in Sources */,
+				168DACC31D44B6ED00752D21 /* testVC.m in Sources */,
 				168DACA71D44857100752D21 /* main.m in Sources */,
+				168DACBF1D44889400752D21 /* UIView+DoorEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

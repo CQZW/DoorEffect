@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import "testVC.h"
+#import "UIView+DoorEffect.h"
 @interface ViewController ()
 
 @end
@@ -18,6 +19,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
+
+- (IBAction)mgoto:(id)sender {
+    
+    [self.view openEffetct:^(BOOL bleft, BOOL bfinish) {
+        
+        if( bleft )
+        {
+ 
+            testVC* vc = [[testVC alloc]initWithNibName:@"testVC" bundle:nil];
+            
+            [self.navigationController pushViewController:vc animated:NO];
+        }
+    }];
+    
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.view closeEffect:^(BOOL bleft, BOOL bfinish) {
+        
+       
+        
+    }];
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
