@@ -41,12 +41,21 @@
                                     <action selector="mgoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yVh-b2-czi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INc-Kl-29x">
+                                <rect key="frame" x="277" y="85" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="aaaa:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L3m-kf-Hdd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="INc-Kl-29x" firstAttribute="centerX" secondItem="dyu-wH-xnN" secondAttribute="centerX" id="9bd-U2-oXa"/>
                             <constraint firstItem="dyu-wH-xnN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EhS-q3-TR0"/>
                             <constraint firstItem="dyu-wH-xnN" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Tbq-fE-WXf"/>
                             <constraint firstItem="dyu-wH-xnN" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="epC-4Y-3gP"/>
+                            <constraint firstItem="INc-Kl-29x" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="iMU-m0-Icx"/>
                             <constraint firstItem="dyu-wH-xnN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yMC-9p-JJU"/>
                         </constraints>
                     </view>
@@ -54,7 +63,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="165" y="-215"/>
+            <point key="canvasLocation" x="-37" y="-415"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="o11-EQ-1Vc">
+            <objects>
+                <viewController id="yH3-vd-jVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g6K-Ph-zKF"/>
+                        <viewControllerLayoutGuide type="bottom" id="bXb-oI-lb8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xar-ja-zzT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bQN-d4-ZJQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2M-8v-o6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="-278"/>
         </scene>
     </scenes>
 </document>
