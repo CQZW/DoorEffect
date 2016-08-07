@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		162D43D61D56E24000A45263 /* basevvvvv.m in Sources */ = {isa = PBXBuildFile; fileRef = 162D43D51D56E24000A45263 /* basevvvvv.m */; };
 		168DACA71D44857100752D21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 168DACA61D44857100752D21 /* main.m */; };
 		168DACAA1D44857100752D21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 168DACA91D44857100752D21 /* AppDelegate.m */; };
 		168DACAD1D44857100752D21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 168DACAC1D44857100752D21 /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		162D43D41D56E24000A45263 /* basevvvvv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basevvvvv.h; sourceTree = "<group>"; };
+		162D43D51D56E24000A45263 /* basevvvvv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = basevvvvv.m; sourceTree = "<group>"; };
 		168DACA21D44857100752D21 /* testDoorEffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testDoorEffect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		168DACA61D44857100752D21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		168DACA81D44857100752D21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +82,8 @@
 				168DACC01D44B6ED00752D21 /* testVC.h */,
 				168DACC11D44B6ED00752D21 /* testVC.m */,
 				168DACC21D44B6ED00752D21 /* testVC.xib */,
+				162D43D41D56E24000A45263 /* basevvvvv.h */,
+				162D43D51D56E24000A45263 /* basevvvvv.m */,
 			);
 			path = testDoorEffect;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				168DACAD1D44857100752D21 /* ViewController.m in Sources */,
 				168DACAA1D44857100752D21 /* AppDelegate.m in Sources */,
 				168DACC31D44B6ED00752D21 /* testVC.m in Sources */,
+				162D43D61D56E24000A45263 /* basevvvvv.m in Sources */,
 				168DACA71D44857100752D21 /* main.m in Sources */,
 				168DACBF1D44889400752D21 /* UIView+DoorEffect.m in Sources */,
 			);
@@ -288,6 +294,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = testDoorEffect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zzl.testDoorEffect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -299,6 +306,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = testDoorEffect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zzl.testDoorEffect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -324,6 +332,7 @@
 				168DACBB1D44857100752D21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

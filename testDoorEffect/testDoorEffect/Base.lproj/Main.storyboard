@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G7a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZTQ-fT-Sfs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZTQ-fT-Sfs">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -33,14 +33,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyu-wH-xnN">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.56862745100000001" green="0.82745098039999998" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="mgoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yVh-b2-czi"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INc-Kl-29x">
                                 <rect key="frame" x="277" y="85" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
@@ -49,14 +41,10 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="INc-Kl-29x" firstAttribute="centerX" secondItem="dyu-wH-xnN" secondAttribute="centerX" id="9bd-U2-oXa"/>
-                            <constraint firstItem="dyu-wH-xnN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EhS-q3-TR0"/>
-                            <constraint firstItem="dyu-wH-xnN" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Tbq-fE-WXf"/>
-                            <constraint firstItem="dyu-wH-xnN" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="epC-4Y-3gP"/>
+                            <constraint firstItem="INc-Kl-29x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RQ9-h7-arQ"/>
                             <constraint firstItem="INc-Kl-29x" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="iMU-m0-Icx"/>
-                            <constraint firstItem="dyu-wH-xnN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yMC-9p-JJU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6ib-f4-Z7r"/>

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "basevvvvv.h"
+@interface ViewController : basevvvvv
 
 
 @end

@@ -12,40 +12,12 @@
 char* g_rigthdoorkey = "rigthdoorkey";
 char* g_leftdoorkey = "leftdoorkey";
 char* g_backgd = "backgd";
-char* g_backimgname = "bgimgname";
 char* g_block_open = "blockopen";
 char* g_block_close = "blockclose";
 char* g_bopened = "bopened";
 
 
 @implementation UIView (DoorEffect)
-
--(NSString*)backGroundImageName:(NSString*)name
-{
-    NSString *retname = objc_getAssociatedObject( self, g_backimgname );
-    if( name )
-    {
-        objc_setAssociatedObject(self,g_backimgname, name, OBJC_ASSOCIATION_RETAIN);
-        retname = name;
-    }
-    
-    if( retname ==nil )
-        retname = @"bg_launch";
-    
-    return retname;
-}
-
--(UIImageView*)backGroudImageView
-{
-    UIImageView *bacgb = objc_getAssociatedObject( self, g_backgd );
-    if( bacgb == nil )
-    {
-        bacgb = [[UIImageView alloc]initWithFrame:self.bounds];
-        objc_setAssociatedObject(self, g_backgd, bacgb, OBJC_ASSOCIATION_RETAIN);
-        bacgb.image = [UIImage imageNamed:[self backGroundImageName:nil]];
-    }
-    return bacgb;
-}
 
 -(UIImageView*)leftDoorImageView
 {
@@ -95,12 +67,20 @@ char* g_bopened = "bopened";
     UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
     UIGraphicsEndImageContext();
     
+    CGImageRelease( subImageRef );
+    
     return smallImage;
 }
 
 //打开门的效果
--(void)openEffetct:(void(^)(BOOL bleft, BOOL bfinish))block
+-(void)openEffetct:(float)time  aboveview:(UIView*)aboveview block:(void(^)(BOOL bleft, BOOL bfinish))block
 {
+    if( time == 0.0f ) time = 0.35f;
+    
+    UIView* showoneview = aboveview;
+    if( showoneview == nil )
+        showoneview = self;
+    
     objc_setAssociatedObject(self, g_block_open, block, OBJC_ASSOCIATION_RETAIN);
     
     CGFloat halfw = self.bounds.size.width/2.0f;
@@ -112,18 +92,15 @@ char* g_bopened = "bopened";
     
     self.rightDoorImageView.image = [self catImage:viewimg rect:CGRectMake(viewimg.size.width/2.0f, 0, viewimg.size.width/2.0f, viewimg.size.height)];
     
-    [self addSubview:self.leftDoorImageView];
-    [self addSubview:self.rightDoorImageView];
-    
-    UIImageView* bgimg = self.backGroudImageView;
-    [self insertSubview:bgimg belowSubview:self.leftDoorImageView];
+    [showoneview addSubview:self.leftDoorImageView];
+    [showoneview addSubview:self.rightDoorImageView];
     
     
     //然后执行动画
     CABasicAnimation*animation=[CABasicAnimation animationWithKeyPath:@"position"];
     animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(halfw*0.5f, halfh)];
     animation.toValue = [NSValue valueWithCGPoint:CGPointMake(-halfw*0.5f, halfh)];;
-    animation.duration= 0.35f;
+    animation.duration= time;
     animation.removedOnCompletion = NO;
     animation.fillMode= kCAFillModeForwards;
     animation.delegate = self;
@@ -131,7 +108,7 @@ char* g_bopened = "bopened";
     CABasicAnimation*animation1=[CABasicAnimation animationWithKeyPath:@"position"];
     animation1.fromValue = [NSValue valueWithCGPoint:CGPointMake(halfw*1.5f, halfh)];
     animation1.toValue = [NSValue valueWithCGPoint:CGPointMake(halfw*2.5f, halfh)];;
-    animation1.duration= 0.35f ;
+    animation1.duration= time ;
     animation1.removedOnCompletion = NO;
     animation1.fillMode= kCAFillModeForwards;
     animation1.delegate = self;
@@ -144,8 +121,11 @@ char* g_bopened = "bopened";
 }
 
 //关闭门的效果
--(void)closeEffect:(void(^)( BOOL bleft,BOOL bfinish))block
+-(void)closeEffect:(float)time block:(void(^)( BOOL bleft,BOOL bfinish))block
 {
+    if( time == 0.0f ) time = 0.35f;
+    
+    
     id vvv = objc_getAssociatedObject(self, g_bopened);
     if( vvv == nil || [vvv intValue] == 0  )
     {
@@ -164,7 +144,7 @@ char* g_bopened = "bopened";
     CABasicAnimation*animation=[CABasicAnimation animationWithKeyPath:@"position"];
     animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(-halfw*0.5f, halfh)];
     animation.toValue = [NSValue valueWithCGPoint:CGPointMake(halfw*0.5f, halfh)];;
-    animation.duration= 0.35f;
+    animation.duration= time;
     animation.removedOnCompletion = NO;
     animation.fillMode= kCAFillModeForwards;
     animation.delegate = self;
@@ -172,7 +152,7 @@ char* g_bopened = "bopened";
     CABasicAnimation*animation1=[CABasicAnimation animationWithKeyPath:@"position"];
     animation1.fromValue = [NSValue valueWithCGPoint:CGPointMake(halfw*2.5f, halfh)];
     animation1.toValue = [NSValue valueWithCGPoint:CGPointMake(halfw*1.5f, halfh)];;
-    animation1.duration= 0.35f;
+    animation1.duration= time;
     animation1.removedOnCompletion = NO;
     animation1.fillMode= kCAFillModeForwards;
     animation1.delegate = self;
@@ -225,14 +205,18 @@ char* g_bopened = "bopened";
 -(void)cleanAll
 {
 
+    self.leftDoorImageView.image = nil;
     [self.leftDoorImageView     removeFromSuperview];
+    
+    self.rightDoorImageView.image = nil;
     [self.rightDoorImageView    removeFromSuperview];
-    [self.backGroudImageView    removeFromSuperview];
+    
+    [self.rightDoorImageView.layer removeAllAnimations];
+    [self.leftDoorImageView.layer removeAllAnimations];
 
     objc_setAssociatedObject(self, g_rigthdoorkey, nil, OBJC_ASSOCIATION_RETAIN);
     objc_setAssociatedObject(self, g_leftdoorkey, nil, OBJC_ASSOCIATION_RETAIN);
     objc_setAssociatedObject(self, g_backgd, nil, OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject(self, g_backimgname, nil, OBJC_ASSOCIATION_RETAIN);
     objc_setAssociatedObject(self, g_block_open, nil, OBJC_ASSOCIATION_RETAIN);
     objc_setAssociatedObject(self, g_block_close, nil, OBJC_ASSOCIATION_RETAIN);
     
